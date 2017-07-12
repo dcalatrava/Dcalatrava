@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Taller Practico JSF</title>
+    </h:head>
+    <h:body>
+        <h:form id="form">
+            
+            <h:panelGrid columns="2">
+                <h:outputText value="Nombre"/>
+                <p:inputText value="#{productoBean.nombre}"/>
+                <h:outputText value="Precio"/>
+                <p:inputText value="#{productoBean.precio}"/>
+                <h:outputText value="Stock"/>
+                <p:inputText value="#{productoBean.stock}"/>
+                <h:outputText value=""/>
+                <p:commandButton actionListener="#{productoBean.crearProducto()}" value="Crear"  icon="ui-icon-disk"/>
+            </h:panelGrid>
+            
+            
+            <p:dataTable value="#{productoBean.productos}" var="p">
+                <p:column headerText="Codigo">
+                    <h:outputText value="#{p.código}"/>
+                </p:column>
+                <p:column headerText="Nombre">
+                    <h:outputText value="#{p.nombre}"/>
+                </p:column>
+                <p:column headerText="Precio">
+                    <h:outputText value="#{p.precio}"/>
+                </p:column>
+                <p:column headerText="Stock">
+                    <h:outputText value="#{p.stock}"/>
+                </p:column>
+            
+            
+            </p:dataTable>
+            
+        </h:form>
+    </h:body>
+</html>
+
